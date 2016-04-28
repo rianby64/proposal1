@@ -26,6 +26,11 @@
           }
         }));
       });
+
+      tagB.addEventListener('created', (e) => {
+        console.dir(e);
+        console.log('was created');
+      });
     }
   }
 

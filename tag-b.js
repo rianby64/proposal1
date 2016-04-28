@@ -23,6 +23,13 @@
           }
         }));
       });
+
+      // Notify to whom it may concern that this was created
+      this.dispatchEvent(new CustomEvent('created', {
+        detail: {
+          element: this
+        }
+      }));
     }
   }
 
