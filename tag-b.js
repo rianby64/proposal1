@@ -14,7 +14,7 @@
 
       shadow.appendChild(clone);
 
-      // The button  will fire a custom message 'yes' through an event
+      // The button will fire a custom message 'yes' through an event
       var button = shadow.querySelector('button');
       button.addEventListener('click', (e) => {
         e.target.dispatchEvent(new CustomEvent('yes', {

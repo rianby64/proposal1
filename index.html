@@ -1,8 +1,4 @@
 <html>
-  <head>
-    <link href="tag-a.html" rel="import">
-    <link href="tag-b.html" rel="import">
-  </head>
   <body>
     <tag-a></tag-a><br>
     <tag-b></tag-b>
@@ -11,8 +7,12 @@
     document.querySelector('tag-b').addEventListener('yes', (e) => {
       console.log(e.detail.message, 'was sent from tag-b in document');
     });
-    document.querySelector('tag-a').addEventListener('yes', (e) => {
+    document.querySelector('tag-a').addEventListener('superyes', (e) => {
       console.log(e.detail.message, 'was sent from tag-a in document');
     });
   </script>
+  <head>
+    <link href="tag-a.html" rel="import">
+    <link href="tag-b.html" rel="import">
+  </head>
 </html>
