@@ -14,22 +14,19 @@
 
       shadow.appendChild(clone);
 
-      // The tag-b will fire a custom message 'superyes'
-      // through an event
       var tagB = shadow.querySelector('tag-b');
-      tagB.addEventListener('yes', (e) => {
-        e.stopPropagation(); // stop this because I want to
-                             // send another message
-        e.target.dispatchEvent(new CustomEvent('superyes', {
-          detail: {
-            message: `SUPER${e.detail.message}`
-          }
-        }));
-      });
-
       tagB.addEventListener('created', (e) => {
-        console.dir(e);
-        console.log('was created');
+        // The tag-b will fire a custom message 'superyes'
+        // through an event
+        e.detail.element.addEventListener('yes', (e) => {
+          e.stopPropagation(); // stop this because I want to
+                               // send another message
+          e.target.dispatchEvent(new CustomEvent('superyes', {
+            detail: {
+              message: `SUPER${e.detail.message}`
+            }
+          }));
+        });
       });
     }
   }
